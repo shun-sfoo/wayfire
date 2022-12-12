@@ -83,10 +83,8 @@ The easiest way to install Wayfire, wf-shell and WCM to get a functional desktop
 Alternatively, you can build from source:
 
 ``` sh
-## arch: meson setup --prefix /usr --libexecdir lib --sbindir bin --buildtype plain --auto-features enabled --wrap-mode nodownload -D b_lto=true -D b_pie=true wf-config-0.7.1 build
-meson build
-ninja -C build
-sudo ninja -C build install
+meson build --prefix=/usr --buildtype=release
+ninja -C build && sudo ninja -C build install
 ```
 
 **Note**: `wf-config` and `wlroots` can be built as submodules, by specifying
